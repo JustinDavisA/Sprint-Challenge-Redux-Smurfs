@@ -11,20 +11,11 @@ const SmurfCard = props => {
         props.deleteSmurf(id)
     }
 
-    const handlePrepopulate = (e, smurf) => {
-        e.preventDefault();
-        props.prepopulateUpdateForm(smurf)
-      }
-
     return (
         <div>
             <p>{`Name: ${smurf.name}`}</p>
             <p>{`Age: ${smurf.age}`}</p>
             <p>{`Email: ${smurf.height}`}</p>
-            <button 
-            onClick={e => handlePrepopulate(e, smurf)}
-            className="update"
-            >Update</button>
             <button
             onClick={e => handleDelete(e, smurf.id)}
             className="delete"
@@ -35,5 +26,5 @@ const SmurfCard = props => {
 
 export default connect(
     null,
-    { deleteSmurf, prepopulateUpdateForm }
+    { deleteSmurf }
 )(SmurfCard);
